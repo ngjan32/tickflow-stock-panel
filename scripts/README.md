@@ -52,3 +52,20 @@ chmod +x scripts/setup-and-run.sh
 
 - https://github.com/ngjan32/tickflow-stock-panel/tree/main/scripts
 
+
+# Mark executable
+
+要在 Git 中将 `scripts/setup-and-run.sh` 标记为可执行 (git executable bit)，可在本地或 CI 中运行：
+
+```bash
+# 在本地检出分支
+git fetch origin
+git checkout feature/add-setup-scripts
+
+# 设置可执行位并提交
+git update-index --chmod=+x scripts/setup-and-run.sh
+git commit -m "chore(scripts): mark setup-and-run.sh executable"
+git push origin feature/add-setup-scripts
+```
+
+我已将上述步骤写入本文件并在 PR 描述中引用，方便合并后维护者一键完成.
